@@ -1,1 +1,1 @@
-Bootstrapped with React
+Bootstrap with React
