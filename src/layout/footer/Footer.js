@@ -3,7 +3,7 @@ import React  from 'react';
 function Footer(props) {
     return (
         <footer className="">
-            <p className="App-header">{props.name} {props.year}</p>
+            <p className="Header">{props.name} {props.year}</p>
         </footer>
     );
 }
