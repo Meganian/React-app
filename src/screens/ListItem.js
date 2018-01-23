@@ -1,11 +1,11 @@
 import React  from 'react';
-
+import injectSheet from 'react-jss'
 
 function ListItem(props)  {
-    const {title, responsible,todoPriority, description, click  } = props;
+    const {classes, title, responsible,todoPriority, description, click  } = props;
 
     return (
-        <div className='ListItem list-group-item' >
+        <div className={classes.listItem +' list-group-item'} >
             <h4 className='list-group-item-heading'>{title}</h4>
             <p className='glyphicon glyphicon-user'> {responsible}<small><span className='label label-info'>{todoPriority}</span></small></p>
             <p>{description}</p>
@@ -14,4 +14,10 @@ function ListItem(props)  {
     );
 }
 
-export default ListItem;
+const styles = {
+    listItem: {
+        margin: '30px auto'
+    }
+};
+
+export default injectSheet(styles)(ListItem);

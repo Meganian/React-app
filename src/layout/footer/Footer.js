@@ -1,11 +1,25 @@
 import React  from 'react';
+import injectSheet from 'react-jss';
 
-function Footer(props) {
+function Footer({classes, ...props}) {
     return (
-        <footer className="">
-            <p className="Header">{props.name} {props.year}</p>
+        <footer className={classes.footer}>
+            <p className={classes.footerTitle}>{props.name} {props.year}</p>
         </footer>
     );
 }
 
-export default Footer;
+const styles = {
+    footer: {
+        backgroundColor: '#263238',
+        height: '175px',
+        padding: '20px',
+        color: 'white',
+        textAlign: 'center'
+    },
+    footerTitle: {
+        fontSize: '2em'
+    }
+};
+
+export default injectSheet(styles)(Footer);

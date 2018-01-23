@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import injectSheet from 'react-jss';
+
 import Todo from './screens/Todo';
 import Footer from './layout/footer/Footer';
 import Header from './layout/header/Header';
@@ -20,9 +21,10 @@ function NexOne() {
 
 class App extends Component {
   render() {
+      const {classes} = this.props;
     return (
         <Router>
-          <div className="App">
+          <div className={classes.app}>
               <Header title={'React apps'}/>
 
 
@@ -39,4 +41,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const styles = {
+    app: {
+        backgroundColor: '#4380b5',
+        margin: 'auto'
+    }
+};
+
+export default injectSheet(styles)(App);

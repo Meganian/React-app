@@ -1,11 +1,12 @@
 import React  from 'react';
 import {  Link } from 'react-router-dom';
+import injectSheet from 'react-jss'
 
-function Header(props)  {
+function Header({classes, ...props})  {
 
     return (
-        <div className="Header">
-            <h1 className="Header-title">{props.title}</h1>
+        <div className={classes.Header}>
+            <h1 className={classes.HeaderTitle}>{props.title}</h1>
             <Link to="/todo"><button className='btn btn-success btn-lg' ><span className='glyphicon glyphicon-pencil'>  Check To Do List </span></button> </Link>
             <Link to="/next"><button className='btn btn-success btn-lg' ><span className='glyphicon glyphicon-pawn'>  Coming soon... </span></button> </Link>
             <Link to="/nextone"><button className='btn btn-success btn-lg' ><span className='glyphicon glyphicon-king'>  Coming soon... </span></button> </Link>
@@ -13,4 +14,20 @@ function Header(props)  {
     );
 }
 
-export default Header;
+const styles = {
+    Header: {
+        backgroundColor: '#263238',
+        textTransform: 'uppercase',
+        height: '175px',
+        padding: '20px',
+        color: 'white',
+        textAlign: 'center'
+    },
+    HeaderTitle: {
+        fontWeight: 'bold',
+        fontSize: '2.5em',
+        marginBottom: '20px'
+    }
+};
+
+export default injectSheet(styles)(Header);

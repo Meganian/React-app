@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-
+import injectSheet from 'react-jss';
 
 class Form extends Component {
 
@@ -38,9 +38,10 @@ class Form extends Component {
     }
 
     render() {
+        const {classes} = this.props;
         return (
-            <div className="Form">
-                <h3>Add New ToDo</h3>
+            <div className={classes.form}>
+                <h3 className={classes.h3}>Add New ToDo</h3>
                 <form className='form-horizontal' onSubmit={this.handleSubmit}>
 
                     <div className='form-group'>
@@ -117,4 +118,14 @@ class Form extends Component {
     }
 }
 
-export default Form;
+const styles = {
+    form: {
+        margin: '50px auto 40px',
+        width: '60%'
+    },
+    h3: {
+        textAlign: 'center'
+    }
+};
+
+export default injectSheet(styles)(Form);
