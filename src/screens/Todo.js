@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-
-import Main from '../layout/main/Main';
+import React, { Component } from 'react'
+import Main from '../components/Main'
 
 class Todo extends Component {
     render() {

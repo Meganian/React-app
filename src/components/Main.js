@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import injectSheet from 'react-jss';
-
-import ToDoList from '../../screens/ToDoList';
-
+import React, { Component } from 'react'
+import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
+import ToDoList from '../screens/ToDoList'
 
 class Main extends Component {
 
     render() {
-        const {classes} = this.props;
+        const { classes } = this.props;
         return (
             <div className={classes.Main}>
                 <ToDoList />
@@ -22,5 +21,10 @@ const styles = {
         width: '60%'
     }
 };
+
+Main.propTypes = {
+    classes: PropTypes.object
+};
+
 
 export default injectSheet(styles)(Main);

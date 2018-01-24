@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import Form from '../screens/Form';
-import ListItem from './ListItem';
+import React, { Component } from 'react'
+import Form from '../screens/Form'
+import ListItem from './ListItem'
 
 const todos = [
     {

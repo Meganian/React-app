@@ -1,9 +1,9 @@
-import React  from 'react';
-import {  Link } from 'react-router-dom';
+import React  from 'react'
+import { Link } from 'react-router-dom'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 function Header({classes, ...props})  {
-
     return (
         <div className={classes.Header}>
             <h1 className={classes.HeaderTitle}>{props.title}</h1>
@@ -28,6 +28,11 @@ const styles = {
         fontSize: '2.5em',
         marginBottom: '20px'
     }
+};
+
+Header.propTypes = {
+    classes: PropTypes.object,
+    title: PropTypes.string.isRequired
 };
 
 export default injectSheet(styles)(Header);

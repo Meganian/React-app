@@ -1,8 +1,10 @@
-import React  from 'react';
+import React from 'react'
 import injectSheet from 'react-jss'
+import PropTypes from 'prop-types'
 
 function ListItem(props)  {
-    const {classes, title, responsible,todoPriority, description, click  } = props;
+
+    const { classes, title, responsible, todoPriority, description, click } = props;
 
     return (
         <div className={classes.listItem +' list-group-item'} >
@@ -18,6 +20,15 @@ const styles = {
     listItem: {
         margin: '30px auto'
     }
+};
+
+ListItem.propTypes = {
+    classes: PropTypes.object,
+    title: PropTypes.string,
+    responsible: PropTypes.string,
+    todoPriority: PropTypes.string,
+    description: PropTypes.string,
+    click: PropTypes.func.isRequired
 };
 
 export default injectSheet(styles)(ListItem);

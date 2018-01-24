@@ -1,5 +1,6 @@
-import React, { Component }  from 'react';
-import injectSheet from 'react-jss';
+import React, { Component }  from 'react'
+import injectSheet from 'react-jss'
+import PropTypes from "prop-types"
 
 class Form extends Component {
 
@@ -83,7 +84,6 @@ class Form extends Component {
                                     id="inputTodoDesc"
                                     value={this.state.todoDescription}
                                     onChange={this.handleInputChange}>
-
                         </textarea>
                         </div>
                     </div>
@@ -126,6 +126,10 @@ const styles = {
     h3: {
         textAlign: 'center'
     }
+};
+
+Form.propTypes = {
+    classes: PropTypes.object
 };
 
 export default injectSheet(styles)(Form);
