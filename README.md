@@ -2,3 +2,4 @@
 2. Bootstrap, 
 3. React Router,
 4. Reac-JSS - injectSheets
+5. PropTypes - typechecking
