@@ -1,6 +1,5 @@
-import React, { Component }  from 'react'
-import injectSheet from 'react-jss'
-import PropTypes from "prop-types"
+import React, { Component }  from 'react';
+
 
 class Form extends Component {
 
@@ -39,10 +38,9 @@ class Form extends Component {
     }
 
     render() {
-        const {classes} = this.props;
         return (
-            <div className={classes.form}>
-                <h3 className={classes.h3}>Add New ToDo</h3>
+            <div className="Form">
+                <h3>Add New ToDo</h3>
                 <form className='form-horizontal' onSubmit={this.handleSubmit}>
 
                     <div className='form-group'>
@@ -84,6 +82,7 @@ class Form extends Component {
                                     id="inputTodoDesc"
                                     value={this.state.todoDescription}
                                     onChange={this.handleInputChange}>
+
                         </textarea>
                         </div>
                     </div>
@@ -118,18 +117,4 @@ class Form extends Component {
     }
 }
 
-const styles = {
-    form: {
-        margin: '50px auto 40px',
-        width: '60%'
-    },
-    h3: {
-        textAlign: 'center'
-    }
-};
-
-Form.propTypes = {
-    classes: PropTypes.object
-};
-
-export default injectSheet(styles)(Form);
+export default Form;

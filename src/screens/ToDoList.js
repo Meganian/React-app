@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import Form from '../screens/Form'
-import ListItem from './ListItem'
-
+import React, {Component} from 'react';
+import Form from '../screens/Form';
+import ListItem from './ListItem';
 const todos = [
     {
         todoTitle: 'My first todo',
@@ -47,28 +46,29 @@ class List extends Component{
     }
 
    render(){
-        return(
-            <div>
-                <Form onAddTodo={this.handleAddTodo} />
-                <hr/>
-                <ul className='list-group-item'>
-                    <h4>ToDo Count: <span className={'badge'}>{this.state.todos.length}</span></h4>
-                    {this.state.todos.map((todo, index) =>
+        return( <div>
+            <Form onAddTodo={this.handleAddTodo} />
+            <hr/>
+            <ul className='list-group-item'>
+                <h4>ToDo Count: <span className={'badge'}>{this.state.todos.length}</span></h4>
+                {this.state.todos.map((todo, index) =>
 
-                        <ListItem key={index}
-                                  title={todo.todoTitle}
-                                  click={this.handleRemoveToDo.bind(this, index)}
-                                  description={todo.todoDescriptions}
-                                  responsible={todo.todoResponsible}
-                                  priority={todo.todoPriority}
-                        />
-                    )
-                    }
+                    <ListItem key={index}
+                              title={todo.todoTitle}
+                              click={this.handleRemoveToDo.bind(this, index)}
+                              description={todo.todoDescriptions}
+                              responsible={todo.todoResponsible}
+                              priority={todo.todoPriority}
+                    />
+                )
+                }
 
-                </ul>
+            </ul>
             </div>
         );
     }
+
+
 }
 
 export default List;

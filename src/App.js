@@ -1,54 +1,39 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import injectSheet from 'react-jss'
-import Todo from './screens/Todo'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import PropTypes from "prop-types"
+import './App.css'
+import Header from './layout/Header'
+import Footer from './layout/Footer'
 
-
-function Next() {
-    return (
-        <div>Coming soon...</div>
-    )
-}
-
-function NexOne() {
-    return (
-        <div>Coming soon...</div>
-    )
-}
+import ToDoContent from './layout/ToDoContent'
+import CollapsibleContent from './layout/CollapsibleContent'
+import ConverterContent from './layout/ConverterContent'
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom';
 
 class App extends Component {
   render() {
-      const { classes } = this.props;
     return (
+        <div>
+        <Header title={'React apps'} />
         <Router>
-          <div className={classes.app}>
-              <Header title={'React apps'}/>
+          <div className="App">
+              <Link to="/">ToDo </Link>
+              <Link to="/collapsible">Collapsible </Link>
+              <Link to="/converter">Converter </Link>
 
-              <Switch>
-                  <Route path="/todo" component={Todo}/>
-                  <Route path="/next" component={Next}/>
-                  <Route path="/nextone" component={NexOne}/>
-              </Switch>
 
-              <Footer name={'Company name'} year={'2018'} />
+            <Route exact path="/" component={ToDoContent} />
+            <Route path="/collapsible" component={CollapsibleContent} />
+            <Route path="/converter" component={ConverterContent} />
           </div>
+
         </Router>
+            <Footer name={'Company name'} year={'2018'} />
+        </div>
     );
   }
 }
 
-const styles = {
-    app: {
-        background: 'linear-gradient(to bottom, rgba(167,65,255,1) 0%,rgba(84,128,253,1) 100%)',
-        margin: 'auto'
-    }
-};
-
-App.propTypes = {
-    classes: PropTypes.object
-};
-
-export default injectSheet(styles)(App);
+export default App;
